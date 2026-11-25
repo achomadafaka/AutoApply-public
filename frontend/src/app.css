@@ -1,0 +1,261 @@
+:root {
+  --c-ink: #1d1b16;
+  --c-ink-muted: #4a453b;
+  --c-paper: #f6efe6;
+  --c-sand: #efe5d6;
+  --c-accent: #e4572e;
+  --c-accent-2: #2a9d8f;
+  --c-border: rgba(29, 27, 22, 0.15);
+  --c-glow: rgba(228, 87, 46, 0.2);
+  --radius: 18px;
+  --shadow: 0 14px 40px rgba(29, 27, 22, 0.12);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--c-ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(42, 157, 143, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, rgba(228, 87, 46, 0.18), transparent 55%),
+    var(--c-paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  position: relative;
+}
+
+.hero {
+  display: grid;
+  gap: 18px;
+  padding: 32px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #fdf7ef 0%, #f2e6d7 100%);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--c-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -30% 60% 30% -30%;
+  background: radial-gradient(circle, var(--c-glow), transparent 70%);
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--c-ink-muted);
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--c-accent);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(228, 87, 46, 0.25);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: rgba(29, 27, 22, 0.2);
+  color: var(--c-ink-muted);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.grid {
+  margin-top: 32px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(29, 27, 22, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.muted {
+  color: var(--c-ink-muted);
+  font-size: 0.95rem;
+}
+
+.list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.list li {
+  border: 1px solid var(--c-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: var(--c-sand);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--c-border);
+  background: #fff;
+  font: inherit;
+  color: inherit;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.material-details summary {
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.material-pre {
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 8px;
+  white-space: pre-wrap;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.artifact-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--c-border);
+  box-shadow: 0 10px 24px rgba(29, 27, 22, 0.08);
+  margin-top: 12px;
+}
+
+.tag {
+  background: rgba(42, 157, 143, 0.18);
+  color: #1f6b60;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.section-title {
+  margin: 36px 0 12px;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.fade-in {
+  animation: fadeUp 0.7s ease both;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    padding: 32px 18px 64px;
+  }
+
+  .hero {
+    padding: 24px;
+  }
+}
