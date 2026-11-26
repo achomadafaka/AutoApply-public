@@ -41,3 +41,5 @@ Selecting a file in a form can upload it before submission. Use a tailored, revi
 - [Architecture](ARCHITECTURE.md) and [release checklist](docs/RELEASE_CHECKLIST.md)
 
 License: no open-source license has been granted yet.
+
+For a private submission ledger and CV/proposal review checklist, see [Review-first application workflow](docs/APPLICATION_WORKFLOW.md).
